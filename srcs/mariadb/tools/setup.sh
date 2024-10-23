@@ -4,10 +4,10 @@
 service mariadb start
 
 #To test - delete after
-DB_NAME=thedatabase
-DB_USER=theuser
-DB_PASSWORD=abc
-DB_PASS_ROOT=123
+# DB_NAME=thedatabase
+# DB_USER=theuser
+# DB_PASSWORD=abc
+# DB_PASS_ROOT=123
 
 #Create database and users with passwords and permissions
 mariadb -v -u root << EOF
