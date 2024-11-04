@@ -7,17 +7,13 @@ cd /var/www/wordpress
 if [ ! -f wp-config.php ]; then
     echo "'wp-config.php' not found. Generating wp-config.php..."
 
-#Create the temp var to be used now, but at the end, we'll have a .env file with all the variables. So you need to remove these declaration lines.
-# WP_URL=login.42.fr
-# WP_TITLE=Inception
-# WP_ADMIN_USER=theroot
-# WP_ADMIN_PASSWORD=123
-# WP_ADMIN_EMAIL=theroot@123.com
-# WP_USER=theuser
-# WP_PASSWORD=abc
-# WP_EMAIL=theuser@123.com
-# WP_ROLE=editor
-
+    wp config create --allow-root \
+        --dbname=$DB_NAME \
+        --dbuser=$DB_USER \
+        --dbpass=$DB_PASSWORD \
+        --dbhost=$DB_HOST \
+        --dbcharset="utf8" \
+        --dbcollate="utf8_general_ci"
 else
     echo "'wp-config.php' already exists, skipping config creation."
 fi

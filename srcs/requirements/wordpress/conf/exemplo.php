@@ -13,29 +13,29 @@
  * * Database table prefix
  * * ABSPATH
  *
- * @link https://wordpress.org/support/article/editing-wp-config-php/
+ * @link https://wordpress.org/documentation/article/editing-wp-config-php/
  *
  * @package WordPress
  */
 
 // ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
+/** O nome do banco de dados do WordPress */
+define('DB_NAME', getenv('DB_NAME'));
 
-// define( 'DB_NAME', getenv('thedatabase') );
-// define( 'DB_USER', getenv('theuser') );
-// define( 'DB_PASSWORD', getenv('abc') );
-// define( 'DB_HOST', getenv('mariadb') );
-// define( 'WP_HOME', getenv('https://login.42.fr') );
-// define( 'WP_SITEURL', getenv('https://login.42.fr') );
+/** Usuário do banco de dados MySQL */
+define('DB_USER', getenv('DB_USER'));
 
-define( 'DB_NAME', getenv('DB_NAME') );
-define( 'DB_USER', getenv('DB_USER') );
-define( 'DB_PASSWORD', getenv('DB_PASSWORD') );
-define( 'DB_HOST', getenv('DB_HOST') );
-define( 'WP_HOME', getenv('WP_FULL_URL') );
-define( 'WP_SITEURL', getenv('WP_FULL_URL') );
-define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', '' );
+/** Senha do banco de dados MySQL */
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
+
+/** Nome do host do MySQL */
+define('DB_HOST', getenv('DB_HOST'));
+
+/** Charset do banco de dados a ser usado na criação das tabelas. */
+define('DB_CHARSET', 'utf8');
+
+/** O tipo de Collate do banco de dados. Não altere isso se tiver dúvidas. */
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication unique keys and salts.
@@ -48,14 +48,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '' );
-define( 'SECURE_AUTH_KEY',  '' );
-define( 'LOGGED_IN_KEY',    '' );
-define( 'NONCE_KEY',        '' );
-define( 'AUTH_SALT',        '' );
-define( 'SECURE_AUTH_SALT', '' );
-define( 'LOGGED_IN_SALT',   '' );
-define( 'NONCE_SALT',       '' );
+define('AUTH_KEY',         getenv('AUTH_KEY'));
+define('SECURE_AUTH_KEY',  getenv('SECURE_AUTH_KEY'));
+define('LOGGED_IN_KEY',    getenv('LOGGED_IN_KEY'));
+define('NONCE_KEY',        getenv('NONCE_KEY'));
+define('AUTH_SALT',        getenv('AUTH_SALT'));
+define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT'));
+define('LOGGED_IN_SALT',   getenv('LOGGED_IN_SALT'));
+define('NONCE_SALT',       getenv('NONCE_SALT'));
 
 /**#@-*/
 
@@ -77,9 +77,9 @@ $table_prefix = 'wp_';
  * For information on other constants that can be used for debugging,
  * visit the documentation.
  *
- * @link https://wordpress.org/support/article/debugging-in-wordpress/
+ * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 

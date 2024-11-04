@@ -32,7 +32,7 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-COPY ./tools/setup.sh /bin/
-RUN	chmod +x /bin/setup.sh
+COPY ./tools/wordpress_script.sh /bin/
+RUN	chmod +x /bin/wordpress_script.sh
 
-ENTRYPOINT	["sh", "/bin/setup.sh"]
+ENTRYPOINT	["sh", "/bin/wordpress_script.sh"]
