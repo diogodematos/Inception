@@ -26,7 +26,7 @@ clean-images:
 clean: down clean-images
 
 fclean: clean
-	@sudo rm -rf /home/dcarrilh/data
+	#@sudo rm -rf /home/dcarrilh/data
 	@docker system prune -a
 	@rm -f ./srcs/.env
 

@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:latest
 
 EXPOSE 3306
 
