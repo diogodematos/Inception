@@ -15,7 +15,7 @@ services:
         - UNIT
         - COMMON_NAME
     container_name: nginx
-    restart: unless-stopped
+    restart: on-failure
     depends_on:
       - wordpress
     networks:
@@ -31,7 +31,7 @@ services:
   wordpress:
     build: ./requirements/wordpress/.
     container_name: wordpress
-    restart: unless-stopped
+    restart: on-failure
     depends_on:
       - mariadb
     networks:
@@ -47,7 +47,7 @@ services:
   mariadb:
     build: ./requirements/mariadb/.
     container_name: mariadb
-    restart: unless-stopped
+    restart: on-failure
     networks:
       - inception
     expose:
