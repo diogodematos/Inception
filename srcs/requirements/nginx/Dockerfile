@@ -15,9 +15,6 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -out ${CERTIFICATE} \
     -subj "/C=${COUNTRY}/ST=${STATE}/L=${LOCALITY}/O=${ORGANIZATION}/OU=${UNIT}/CN=${DOMAIN_NAME}"
 
-
-#COPY index.html /usr/share/nginx/html
-
 COPY ./conf/nginx.conf etc/nginx/
 
 RUN sed -i "s#{{DOMAIN_NAME}}#$DOMAIN_NAME#g" etc/nginx/nginx.conf

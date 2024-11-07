@@ -18,15 +18,11 @@ RUN wget --no-check-certificate https://wordpress.org/wordpress-6.3.1.tar.gz -P 
 
 RUN cd /var/www/ && tar -xzf wordpress-6.3.1.tar.gz && rm wordpress-6.3.1.tar.gz
 
-#COPY ./conf/wp-config.php /var/www/wordpress
-
 RUN chown -R root:root /var/www/wordpress
 
 RUN chown -R 755 /var/www/wordpress
 
 COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/
-
-#RUN mkdir -p /run/php
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar
